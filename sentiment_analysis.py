@@ -26,7 +26,7 @@ api = tweepy.API(auth, wait_on_rate_limit = True)
 # creating a dataframe
 
 df=[]
-posts= tweepy.Cursor(api.search,q="washing machine",tweet_mode="extended").items(n) # n = number of tweets to extract
+posts= tweepy.Cursor(api.search,q="#keyword_or_hashtag",tweet_mode="extended").items(n) # n = number of tweets to extract
 for i in posts:
     df.append([i.full_text,i.favorite_count,i.created_at])
 
